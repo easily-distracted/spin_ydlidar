@@ -35,7 +35,7 @@ class Dynamixel {
 
     public:
     Dynamixel();
-    void checkError();
+   void checkError();
     void moveMotor(double position);
     void startTime();
     void endTime();
@@ -92,7 +92,7 @@ void initialize(){
 
     motor_1.moveMotor(min_angle);
     ros::Duration(pause_time).sleep();
-    motor_1.checkError();
+   motor_1.checkError();
     ros::Duration(pause_time).sleep();
 }
 
@@ -129,8 +129,8 @@ int main(int argc, char **argv) {
     Dynamixel motor;
 
     //establish parameters
-    nh.param("maximum", max, 92);
-    nh.param("minimum", min, -92);
+    nh.param("maximum", max, -90);
+    nh.param("minimum", min,  90);
     nh.param("pause", pause, 0.1);
 
     //transfer parameters to global variables
