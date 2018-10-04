@@ -1,14 +1,14 @@
 # This file is the original configuration for spin_hokuyuo
 
-pan_controller:
+tilt_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: pan_joint
-    joint_speed: 2.0
+    joint_name: tilt_joint
+    joint_speed: 5
     motor:
         id: 1
-        init: 512
-        min: 0
+        init: 526
+        min: 1
         max: 1023
