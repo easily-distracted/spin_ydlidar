@@ -7,7 +7,7 @@
     pkg="dynamixel_controllers"
     type="controller_manager.py"
 
-  </node>
+  />
 
   <rosparam
     file="$(find spin_ydlidar)/launch/dynamixel_servos_tilting.yaml"
