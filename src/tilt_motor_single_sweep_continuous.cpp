@@ -129,8 +129,8 @@ int main(int argc, char **argv) {
     Dynamixel motor;
 
     //establish parameters
-    nh.param("maximum", max, -90);
-    nh.param("minimum", min,  90);
+    nh.param("maximum", max, -45);
+    nh.param("minimum", min,  45);
     nh.param("pause", pause, 0.1);
 
     //transfer parameters to global variables
