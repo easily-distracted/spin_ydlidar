@@ -7,10 +7,10 @@ tilt_controller:
         type: JointPositionController
     joint_name: tilt_joint
 
-    joint_speed: 5
+    joint_speed: 1.17
     motor:
         id: 1
-        init: 526
-        min: 1
+        init: 512
+        min: 0
         max: 1023
 
