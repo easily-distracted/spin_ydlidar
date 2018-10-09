@@ -11,10 +11,10 @@ This repository contains code to control a Dynamixel motor and a 2D YDLIDAR LiDA
 3. Run catkin_make
 4. In the tutorials/launch folder, update the basic_motors.launch file, go to line 12. These parameters are used to set up the dynamixel_motor package. In particular, make sure the port_name and baud_rate match your servo. Also, check that your motor id falls within the inclusive range from min_motor_id to max_motor_id. 
 5. Save and compile changes (if applicable).<br/>
-```roslaunch spin_hokuyo basic_motors.launch```<br/>
+```roslaunch spin_ydlidar basic_motors.launch```<br/>
 6. In a new terminal, open the rostopics list.  There should be two new commands: /tilt_controller/command and /tilt_controller/state.  /command will issue new positions to the motor via Float64 (try this using rostopic pub).  /state will list various pieces of information about the motor (rostopic echo).
 7. If this is fully functional, kill the node and do:<br/>
-```roslaunch spin_hokuyo tilting_continuous.launch```<br/>
+```roslaunch spin_ydlidar tilting_continuous.launch```<br/>
 This should cause the motor to regularly sweep from 90 to -90 and generate a point cloud.
 Be sure to update the dynamixel_servos_tilting.yaml for position, speed, etc.
 
