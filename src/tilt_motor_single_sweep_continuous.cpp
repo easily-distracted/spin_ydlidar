@@ -35,7 +35,7 @@ class Dynamixel {
 
     public:
     Dynamixel();
- 
+    void checkError();
     void moveMotor(double position);
     void startTime();
     void endTime();
@@ -62,6 +62,16 @@ void Dynamixel::moveMotor(double position) {
     ROS_INFO_STREAM(aux);
 }
 
+//ensures proper alignment
+void Dynamixel::checkError() {
+    ros::spinOnce(); //get starting value of motor position error
+
+    while((abs (error))>0.05) { //keep waiting and checking error until < 0.05
+        ros::Duration(.1).sleep();
+        ros::spinOnce();
+    }
+}
+
 //publishes start time for cloud compiler
 void Dynamixel::startTime() {
     std_msgs::Time msg;
@@ -82,6 +92,8 @@ void initialize(){
 
     motor_1.moveMotor(min_angle);
     ros::Duration(pause_time).sleep();
+    motor_1.checkError();
+    ros::Duration(pause_time).sleep();
 }
 
 //performs one sweep min -> max -> min
@@ -92,10 +104,12 @@ void sweep()
     motor.startTime();
     motor.moveMotor(max_angle);
     ros::Duration(pause_time).sleep();
-
+    motor.checkError();
+    ros::Duration(pause_time).sleep();
 
     motor.moveMotor(min_angle);
     ros::Duration(pause_time).sleep();
+    motor.checkError();
     motor.endTime();
     ros::Duration(pause_time).sleep();
     ROS_INFO("Finished One Sweep!");
@@ -115,8 +129,8 @@ int main(int argc, char **argv) {
     Dynamixel motor;
 
     //establish parameters
-    nh.param("maximum", max, -45);
-    nh.param("minimum", min,  45);
+    nh.param("maximum", max, 92);
+    nh.param("minimum", min, -92);
     nh.param("pause", pause, 0.1);
 
     //transfer parameters to global variables
