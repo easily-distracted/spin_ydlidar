@@ -4,7 +4,7 @@
 
 /* This node publishes the tf between the laser scan and the servo.  This is based on the angle published by the servo. */
 
-//Module that applies transform to laser scan of tilting hokuyo laser
+//Module that applies transform to laser scan of tilting ydlidar laser
 using namespace std;
 
 //global variables
