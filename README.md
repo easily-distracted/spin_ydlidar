@@ -1,8 +1,8 @@
-# spin_ydlidar (Not Yet Funtional)
+# spin_ydlidar 
 This repository contains code to control a Dynamixel motor and a 2D YDLIDAR LiDAR to create a 3D point cloud that can be visualized in rviz.
 
 
-# Setup Directions (Not Yet Current)
+# Setup Directions
 1. Create Catkin Workspace
 2. Source required repos
   https://github.com/easily-distracted/spin_ydlidar.git
