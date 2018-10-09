@@ -32,8 +32,7 @@
     type="controller_spawner.py"
     args="--manager=dxl_manager
           --port pan_tilt_port
-          --type=simple
-	    tilt_controller"
+     	    tilt_controller"
     output="screen"
   />
 
