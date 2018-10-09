@@ -33,8 +33,8 @@ target_link_libraries(pcl_assembler_client ${catkin_LIBRARIES})
 add_executable(tilt_motor_subscribe src/tilt_motor_single_sweep_subscribe.cpp)
 target_link_libraries(tilt_motor_subscribe ${catkin_LIBRARIES})
 
-add_executable(hokuyo_robot_filter src/ydlidar_robot_filter.cpp)
-target_link_libraries(hokuyo_robot_filter ${catkin_LIBRARIES})
+add_executable(ydlidar_robot_filter src/ydlidar_robot_filter.cpp)
+target_link_libraries(ydlidar_robot_filter ${catkin_LIBRARIES})
 
 add_executable(commander tutorials/node/commander.cpp)
 target_link_libraries(commander ${catkin_LIBRARIES})
