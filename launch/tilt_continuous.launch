@@ -60,9 +60,9 @@
   </node>
 
   <node
-    name="hokuyo_robot_filter"
+    name="ydlidar_robot_filter"
     pkg="spin_ydlidar"
-    type="hokuyo_robot_filter"
+    type="ydlidar_robot_filter"
     output="screen"
   />
 
@@ -77,7 +77,7 @@
     <arg name="assemble" default="velodyne_points"/>
 
   <node type="point_cloud2_assembler" pkg="laser_assembler"  name="pcl_assembler_server">
-    <remap from="cloud" to="hokuyo_points"/>
+    <remap from="cloud" to="ydlidar_points"/>
     <param name="max_clouds" type="int" value="400" />
     <param name="fixed_frame" type="string" value="map" />
   </node>
