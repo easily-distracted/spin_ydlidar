@@ -1,3 +1,6 @@
+![Sample Image](relative/path/to/img.jpg?raw=true "Title")
+
+
 # spin_ydlidar 
 This repository contains code to control a Dynamixel motor and a 2D YDLIDAR LiDAR to create a 3D point cloud that can be visualized in rviz.
 
